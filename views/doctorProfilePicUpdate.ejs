@@ -1,0 +1,56 @@
+<%- include("partials/header") -%>
+
+
+
+    <section id="main-navbar">
+
+      <nav class="navbar navbar-expand-lg fixed-top">
+     <div class="container-fluid">
+       <a class="navbar-brand" href="#"><strong><img src="images/angel.png" alt="">Doctors</strong></a>
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarNav">
+         <ul class="navbar-nav ms-auto">
+           <li class="nav-item">
+
+             <a href="/doctorfilesAdd" class="btn btn-md btn-light btn-goback" type="button" name="button"><strong>Go Back</strong></a>
+           </li>
+         </ul>
+       </div>
+     </div>
+    </nav>
+    </section>
+
+
+    <section id="file-update-doctor">
+
+        <h1><strong>Update Your ProfilePic</strong> </h1>
+      <form id="uploadForm" class="form-upload-doctor" action="/doctorProfilePicUpdate" method="post" enctype="multipart/form-data">
+    <div class="row">
+      <div class="col-sm-6">
+        <label for="ppic">Profile Pic</label> <br>
+        <input id="ppic" type="file" name="ppic"  required> <br>
+
+          <!-- <input type="text" name="uname" value="" placeholder="User Name" required> <br> -->
+
+
+      </div>
+      <div class="col-sm-6">
+        <label for="idcard">ID Card</label> <br>
+        <input id="idcard" type="file" name="idcard"  required> <br>
+        <!-- <label for="mbbs">Mbbs Certificate</label> <br>
+        <input id="mbbs" type="file" name="mbbs" value="" required>
+        <label for="md">MD Certificate</label> <br>
+        <input id="md" type="file" name="md" value="" required> <br> -->
+        <button class="btn btn-sm btn-light btn-doc-file" type="submit" name="button">Update ProfilePic</button> <br>
+      </div>
+
+    </div>
+  </form>
+
+
+    </section>
+
+
+    <%- include("partials/footer") -%>

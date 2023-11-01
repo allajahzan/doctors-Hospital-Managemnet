@@ -1,0 +1,68 @@
+<%- include("partials/header") -%>
+
+<section id="main-navbar-doctors">
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+ <div class="container-fluid">
+   <a class="navbar-brand" href="#"><strong><img src="images/angel.png" alt="">Doctors</strong></a>
+   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarNav">
+     <ul class="navbar-nav ms-auto">
+       <li class="nav-item">
+
+
+         <a href="/bookdetails" class="btn btn-md btn-light btn-goback" type="button" name="button"><strong>Go Back</strong></a>
+       </li>
+     </ul>
+   </div>
+ </div>
+</nav>
+</section>
+
+<section id="appointment-history">
+
+  <p>Your Previous Appointments</p>
+
+  <div class="row">
+
+<% patients.forEach((patient) => { %>
+    <div class="col-sm-4">
+        <div class="card card-body">
+          <div class="table1">
+            <h6>Dr, <%= patient.doctorName %></h6>
+            <h6><%= patient.doctorSpecialization %></h6>
+          </div>
+          <div class="table2">
+            <h6><%= patient.doctorHospitalName %></h6>
+            <h6><%= patient.doctorHospitalPlace %>, <%= patient.doctorHospitalCity %></h6>
+          </div>
+          <hr>
+          <div class="table3">
+            <h6> Date : <%= patient.doctorHospitalDate %></h6>
+            <h6> Time : <%= patient.doctorHospitalTime %></h6>
+          </div>
+          <hr>
+          <div class="table4">
+            <h6>Patient ID : <%= patient.patientId %></h6>
+            <h6>Name : <%= patient.patientName %></h6>
+          </div>
+          <hr>
+          <div class="table5">
+            <h6 class="h6">Booked Date : <%= patient.bookingDate %></h6>
+            <h6 class="h6">Booked Time : <%= patient.bookingTime %></h6>
+          </div>
+          <img src="images/tick2.png" alt="">
+        </div>
+
+    </div>
+      <% }); %>
+
+
+    </div>
+
+</section>
+
+
+<%- include("partials/footer") -%>

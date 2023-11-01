@@ -1,0 +1,68 @@
+<%- include("partials/header") -%>
+
+<section id="main-navbar-doctors">
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+ <div class="container-fluid">
+   <a class="navbar-brand" href="#"><strong><img src="images/angel.png" alt="">Doctors</strong></a>
+   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarNav">
+     <ul class="navbar-nav ms-auto">
+       <li class="nav-item">
+
+
+
+
+<a>
+
+ <a href="admin" class="btn btn-md btn-light btn-goback" type="submit" name="button"><strong>Go Back</strong></a>
+
+</a>
+
+       </li>
+     </ul>
+   </div>
+ </div>
+</nav>
+</section>
+
+<section id="amb-approve">
+
+  <h1><strong>Lists of approved ambulance drivers</strong></h1>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Phone No</th>
+      <th>Email</th>
+      <th>Hospital</th>
+      <th>Place</th>
+      <th>City</th>
+    </tr>
+
+    <% drivers.forEach((driver) => { %>
+      <tr>
+        <td class="id-dri"><%= driver.driverId %></td>
+        <td class="name"><%= driver.driverName %></td>
+        <td class="num"><%= driver.driverGender %></td>
+        <td class="cert"><%= driver.driverPhoneNo %></td>
+        <td class="mail"><%= driver.driverEmail %></td>
+        <td class="cert"><%= driver.driverHospital %></td>
+        <td class="cert"><%= driver.driverPlace %></td>
+        <td class="cert"><%= driver.driverCity %></td>
+      </tr>
+    <% }) %>
+  </table>
+
+
+  <div class="image">
+      <img src="images/angel.png" alt="">
+  </div>
+
+</section>
+
+
+<%- include("partials/footer") -%>

@@ -1,0 +1,75 @@
+<%- include("partials/header") -%>
+
+    <section id="main-navbar">
+
+      <nav class="navbar navbar-expand-lg fixed-top">
+     <div class="container-fluid">
+       <a class="navbar-brand" href="#"><strong><img src="images/angel.png" alt="">Doctors</strong></a>
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarNav">
+         <ul class="navbar-nav ms-auto">
+           <li class="nav-item">
+             <a href="/doctorProfileDate&Time" class="btn-date" type="button" name="button">Update Date & Time</a>
+             <a href="/doctorProfileUpdate" class="btn-update" type="button" name="button">Update Profile</a>
+             <a href="/doctors" class="btn btn-md btn-light btn-goback" type="button" name="button"><strong>Go Back</strong></a>
+           </li>
+         </ul>
+       </div>
+     </div>
+    </nav>
+    </section>
+
+
+
+
+    <section id="card-big">
+            <h1><strong>Add Your Profile</strong> </h1>
+          <form class="form-edit-card" action="/doctorprofileadd" method="post">
+
+            <div class="row row1">
+
+              <div class="col-sm-4">
+
+                <!-- <input type="text" name="uname" value="" placeholder="User Name"  required> <br> -->
+                <input onkeydown="return /[a-zA-Z]/i.test(event.key)" type="text" name="name" value="" placeholder="Name" required> <br>
+                <input type="radio" id="male" name="gender" value="Male" required><label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="Female" required><label for="female">Female</label>
+                <input type="radio" id="others" name="gender" value="Others" required><label for="others">Others</label>
+                    <input class="inputs" type="number" name="age" value="" placeholder="Age" required>
+                <input onkeydown="return /[a-zA-Z]/i.test(event.key)" class="inputs" type="text" name="qualifications" value="" placeholder="Qualifications" required> <br>
+                  <input onkeydown="return /[a-zA-Z]/i.test(event.key)" class="inputs" type="text" name="specialization" value="" placeholder="Specialization" required> <br>
+
+
+              </div>
+              <div class="col-sm-4">
+
+                <input type="number" name="yearofexp" value="" placeholder="Year Of Experience" required> <br>
+                          <input type="text" name="place" value="" placeholder="Place" required> <br>
+                <input onkeydown="return /[a-zA-Z]/i.test(event.key)" type="text" name="hospitalName" value="" placeholder="Hospital Name" required> <br>
+                <input onkeydown="return /[a-zA-Z]/i.test(event.key)" type="text" name="hospitalPlace" value="" placeholder="Hospital Place" required> <br>
+                  <input onkeydown="return /[a-zA-Z]/i.test(event.key)" type="text" name="hospitalCity" value="" placeholder="Hospital City" required> <br>
+
+              </div>
+              <div class="col-sm-4">
+
+                <input type="text" name="dates" value="" placeholder="yyyy-mm-dd..." required> <br>
+                   <input type="text" name="days" value="" placeholder="Days" required> <br>
+
+
+                        <input type="text" name="startTime" value="" placeholder="From (hh:mm am)" required> <br>
+
+                        <input type="text" name="endTime" value="" placeholder="To (hh:mm pm)" required> <br>
+
+
+                           <button class="btn btn-light btn-save-profile" type="submit" name="button">Add Profile</button> <br>
+              </div>
+            </div>
+            </form/
+
+    </section>
+
+
+
+  <%- include("partials/footer") -%>

@@ -1,0 +1,63 @@
+<%- include("partials/header") -%>
+
+    <section id="main-navbar">
+
+      <nav class="navbar navbar-expand-lg fixed-top">
+     <div class="container-fluid">
+       <a class="navbar-brand" href="#"><strong><img src="images/angel.png" alt="">Doctors</strong></a>
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarNav">
+         <ul class="navbar-nav ms-auto">
+           <li class="nav-item">
+             <a href="/doctorprofileadd" class="btn btn-md btn-light btn-goback" type="button" name="button"><strong>Go Back</strong></a>
+           </li>
+         </ul>
+       </div>
+     </div>
+    </nav>
+    </section>
+
+
+
+
+    <section id="card-big">
+            <h1><strong>Update The Dates & Times</strong> </h1>
+          <form class="form-edit-card form-time" action="/doctorProfileUpdateDate" method="post">
+
+            <div class="row row1">
+
+              <div class="col-sm-4">
+
+                <!-- <input type="text" name="uname" value="" placeholder="User Name"  required> <br> -->
+                  <input type="text" name="dates" value="" placeholder="yyyy-mm-dd..." required> <br>
+                  <input type="text" name="days" value="" placeholder="Days" required> <br>
+
+
+
+              </div>
+              <div class="col-sm-4">
+
+                     <input type="text" name="startTime" value="" placeholder="From (hh:mm am)" required> <br>
+
+                     <input type="text" name="endTime" value="" placeholder="To (hh:mm pm)" required> <br>
+
+
+              </div>
+              <div class="col-sm-4">
+
+
+
+
+
+                           <button class="btn btn-light btn-date btn-save-profile" type="submit" name="button">Update Dates & Time</button> <br>
+              </div>
+            </div>
+            </form/
+
+    </section>
+
+
+
+  <%- include("partials/footer") -%>

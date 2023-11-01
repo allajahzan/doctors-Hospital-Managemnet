@@ -1,0 +1,64 @@
+<%- include("partials/header") -%>
+
+<section id="main-navbar-doctors">
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+ <div class="container-fluid">
+   <a class="navbar-brand" href="#"><strong><img src="images/angel.png" alt="">Doctors</strong></a>
+   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarNav">
+     <ul class="navbar-nav ms-auto">
+       <li class="nav-item">
+
+
+         <a href="/admin" class="btn btn-md btn-light btn-goback" type="button" name="button"><strong>Go Back</strong></a>
+       </li>
+     </ul>
+   </div>
+ </div>
+</nav>
+</section>
+
+
+<section id="p-lists">
+
+  <h1><strong>Messages From Users</strong> </h1>
+  <div class="container">
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Messages</th>
+        <th>Action</th>
+
+      </tr>
+<% messages.forEach((message) => { %>
+        <tr class="tr">
+          <td class="id"><%= message.userId %></td>
+          <td class="name"><%= message.userName %></td>
+          <td class="mail"><%= message.userEmail %></td>
+          <td class="msg">  <%= message.userMessege %></td>
+          <td class="action">
+            <form action="/readMessage" method="post">
+             <input type="hidden" name="userId" value="<%= message.userId %>">
+             <button class="btn btn-sm btn-light btn-accept" type="submit">Read</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </table>
+  </div>
+
+  <div class="image">
+      <img src="images/angel.png" alt="">
+  </div>
+
+</section>
+
+
+
+
+<%- include("partials/footer") -%>

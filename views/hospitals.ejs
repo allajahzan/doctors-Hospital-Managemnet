@@ -1,0 +1,48 @@
+<%- include("partials/header") -%>
+
+<section id="main-navbar">
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+ <div class="container-fluid">
+   <a class="navbar-brand" href="#"><strong><img src="images/angel.png" alt="">Doctors</strong></a>
+   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarNav">
+     <ul class="navbar-nav ms-auto">
+       <li class="nav-item">
+         <a href="/mainpage" class="btn btn-md btn-light btn-goback" type="button" name="button"><strong>Go Back</strong></a>
+       </li>
+     </ul>
+   </div>
+ </div>
+</nav>
+</section>
+
+<section id="hospitals">
+    <div class="row">
+      <div class="col-sm-6">
+          <p>Hospitals</p>
+          <h1><strong>Find the government or private hospitals near your home.</strong> </h1>
+          <p class="para">You can get the details of both private and government hospitals at your location</p>
+      </div>
+      <div class="col-sm-6">
+        <form class="form-hospital" action="/hospitalslist" method="post">
+           <input type="text" name="city" value="" placeholder="City Name"> <br>
+           <input id="gov" type="radio" name="cat" value="Government"><label class="label1" for="gov">Government</label>
+           <input id="pri" type="radio" name="cat" value="Private"><label class="label2" for="pri">Private</label>
+           <input id="both" type="radio" name="cat" value="All"><label class="label3" for="both">Both</label>
+           <button class="btn btn-sm btn-light btn-search" type="submit" name="button">Search</button>
+
+        </form>
+
+      </div>
+
+    </div>
+</section>
+
+<section id="img-part-hospital">
+   <img src="images/hospital1.png" alt="">
+</section>
+
+<%- include("partials/footer") -%>

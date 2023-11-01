@@ -1,0 +1,78 @@
+<%- include("partials/header") -%>
+
+
+    <section id="main-navbar">
+
+      <nav class="navbar navbar-expand-lg fixed-top">
+     <div class="container-fluid">
+       <a class="navbar-brand" href="#"><strong><img src="images/angel.png" alt="">Doctors</strong></a>
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarNav">
+         <ul class="navbar-nav ms-auto">
+           <li class="nav-item">
+             <a href="/" class="btn btn-md btn-light btn-goback" type="button" name="button"><strong>Go Back</strong></a>
+           </li>
+         </ul>
+       </div>
+     </div>
+    </nav>
+    </section>
+
+
+
+    <section id="signup">
+      <form class="form-signup" action="/signup" method="post">
+          <h3 class="h3-register"><strong>Sign Up Here!</strong> </h3>
+          <input type="text" name="name1" placeholder="Name" onkeydown="return /[a-zA-Z]/i.test(event.key)" required> <br>
+          <input class="password" type="password" id="passwordInput" name="password1" maxlength="10" placeholder="Password" required>
+          <span class="password-toggle" onclick="togglePasswordVisibility()"> <i id="icon" class="fa-sharp fa-solid fa-eye"></i></span>
+          <input type="email" name="email" placeholder="Email ID" pattern="[^@]+@gmail\.com" title="Please enter a valid Gmail address (e.g., xyz@gmail.com)" required>
+          <button class="btn btn-md btn-light btn-register" type="submit" name="button">Create An Account</button>
+          <p>Already Have An Account?</p>
+          <button class="btn btn-md btn-light btn-go-back-login" type="button">Go To Login</button>
+      </form>
+  </section>
+
+    <section id="login">
+            <form class="form-login" action="/login" method="post">
+              <h3 class="h3-login"><strong>Login Here!</strong> </h3>
+              <input type="text" name="name2" placeholder="Name" onkeydown="return /[a-zA-Z]/i.test(event.key)" required>
+              <input type="password" id="passwordInput1" name="password2" placeholder="Password" maxlength="10" required> <br>
+              <span class="password-toggle1" onclick="togglePasswordVisibility1()"> <i id="icon1" class="fa-sharp fa-solid fa-eye"></i></span>
+
+              <button class="a" type="button" id="userPassword">Forgot Password?</button> <br>
+
+              <br>
+              <button class="btn btn-md btn-light btn-login" type="submit" name="button">login</button> <br>
+              <br>
+              <p>Don't Have An Account?</p>
+              <button class="btn btn-md btn-light btn-go-signup" type="button" name="button">signup</button>
+        </form>
+    </section>
+
+    <div class="extra">
+      <p>For Users</p>
+      <h1><strong>Here you can create an account and login</strong> </h1>
+      <p class="para">If you want to access the features giving by this website then you have to login here</p>
+    <img class="img" src="images/login1.png" alt="">
+    </div>
+
+
+        <section id="forgot-password">
+<div class="container form-password">
+  <form action="changeUserPassword" method="post">
+  <h3 class="h3-login"><strong>Recover Password!</strong> </h3>
+  <input type="text" name="email" placeholder="Email ID" required> <br>
+  <!-- <input type="password" name="password"placeholder="New Password" required> <br> -->
+  <button type="submit" class="btn btn-light btn-submit" name="button">Submit</button> <br>
+  <button type="button" class="btn btn-light btn-gotologin" name="button">Go To Login</button> <br>
+  </form>
+
+</div>
+
+        </section>
+
+
+<%- include("partials/footer") -%>

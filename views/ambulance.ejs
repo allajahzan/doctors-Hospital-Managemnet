@@ -1,0 +1,121 @@
+<%- include("partials/header") -%>
+
+
+    <section id="main-navbar">
+
+      <nav class="navbar navbar-expand-lg fixed-top">
+     <div class="container-fluid">
+       <a class="navbar-brand" href="#"><strong><img src="images/angel.png" alt="">Doctors</strong></a>
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarNav">
+         <ul class="navbar-nav ms-auto">
+           <li class="nav-item">
+
+
+             <a href="/mainpage" class="btn btn-md btn-light btn-goback" type="button" name="button"><strong>Go Back</strong></a>
+           </li>
+           </ul>
+       </div>
+     </div>
+    </nav>
+    </section>
+
+    <section id="booked">
+
+
+      <div class="row row1">
+        <div class="col-sm-4">
+             <a class="h1 btn btn-sm btn-light btn-prebook"><strong> Requests </strong> <i class="fa-solid fa-truck-medical"></i> </a>
+        </div>
+        <div class="col-sm-4">
+
+            <div class="row">
+              <div class="col-sm-6">
+                <a class="h1 btn btn-sm btn-light btn-patient"><strong> Patients </strong> <i class="fa-solid fa-truck-medical"></i> </a>
+              </div>
+              <div class="col-sm-6">
+                 <a class="h1 btn btn-sm btn-light btn-upload"><strong> File </strong> <i class="fa-solid fa-truck-medical"></i> </a>
+              </div>
+
+            </div>
+
+
+        </div>
+        <div class="col-sm-4">
+
+          <div class="row">
+            <div class="col-sm-6">
+                  <a class="h1 btn btn-sm btn-light btn-profile"><strong> Profile </strong> <i class="fa-solid fa-truck-medical"></i> </a>
+            </div>
+            <div class="col-sm-6">
+                  <a class="h1 btn btn-sm btn-light btn-account"><strong> Account </strong> <i class="fa-solid fa-truck-medical"></i> </a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row row2">
+        <div class="col-sm-4">
+          <form class="form-booking-list" name="formdriver" action="getbookinglist" method="post">
+    <p class="p">Give The Date</p>
+    <input type="text" name="date" placeholder="yyyy-mm-dd" required>
+    <input type="hidden" name="kundi" id="kundi">
+    <button type="submit" class="btn btn-light btn-get-lists" name="button">Get Lists</button>
+  </form>
+
+        </div>
+        <div class="col-sm-4">
+          <form class="form-update-prof" name="formdriver" action="deleteDriverProfile" method="post">
+            <input  type="hidden" name="unamedriver" id="unamedriverpro" >
+            <button type="submit" class="btn btn-light btn-get-lists" name="button">Delete Profile</button>
+            <p>Wanna Add Profile?</p>
+            <a href="driverprofileAdd" type="button" class="btn btn-light btn-get-lists btn-update-driver" name="button">Add/Update Profile</a>
+          </form>
+        </div>
+        <div class="col-sm-4">
+          <form class="form-delete-prof" action="logoutAmbulance" method="post">
+              <h2><i class="fa-solid fa fa-user"></i> <span id="username"></span></h2>
+              <h2><i class="fa-solid  fa fa-envelope"></i><span id="email"></span></h2>
+            <button type="submit" class="btn btn-light btn-get-lists" name="button">Logout</button>
+          </form>
+        </div>
+      </div>
+
+
+      <div class="col-sm-4">
+        <form class="form-upload-prof" name="formdriver" action="removeDriverProfilePic" method="post">
+          <input  type="hidden" name="unamedriver" id="unamedriver" >
+          <button type="submit" class="btn btn-light btn-get-lists" name="button">Remove Profile Pic</button>
+          <p>Wanna Update Files?</p>
+          <a href="driverfilesAdd" type="button" class="btn btn-light btn-get-lists btn-update-driver" name="button">Add/Update Files</a>
+        </form>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="form-get-patient">
+        <form name="formdriver" action="acceptedPatients" method="post">
+          <button type="submit" class="btn btn-light btn-get-lists" name="button">Accepted Patients</button>
+        </form>
+          <p>Get Patients Lists</p>
+          <form class="" action="rejectedPatients" method="post">
+            <button type="submit" class="btn btn-light btn-get-lists btn-update-driver" name="button">Rejected Patients</button>
+          </form>
+      </div>
+        </div>
+
+
+
+      <div class="image">
+          <img src="images/angel.png" alt="">
+      </div>
+
+    </section>
+
+
+
+
+<%- include("partials/footer") -%>

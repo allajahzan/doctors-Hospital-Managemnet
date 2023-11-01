@@ -1,0 +1,47 @@
+<%- include("partials/header") -%>
+
+    <section id="main-navbar">
+
+      <nav class="navbar navbar-expand-lg fixed-top">
+     <div class="container-fluid">
+       <a class="navbar-brand" href="#"><strong><img src="images/angel.png" alt="">Doctors</strong></a>
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarNav">
+         <ul class="navbar-nav ms-auto">
+           <li class="nav-item">
+             <a href="/doctors" class="btn btn-md btn-light btn-goback" type="button" name="button"><strong>Go Back</strong></a>
+           </li>
+         </ul>
+       </div>
+     </div>
+    </nav>
+    </section>
+
+    <section id="presc">
+
+            <h1><strong>Send The Prescription</strong> </h1>
+         <form class="from-presc" action="/prescription" method="post">
+
+           <div class="row">
+             <div class="col-sm-4">
+                <input type="text" name="pid" value="" placeholder="Patient's ID" required>
+             </div>
+             <div class="col-sm-4">
+                <input type="text" name="pname" value="" placeholder="Patient's Name" required>
+             </div>
+             <div class="col-sm-4">
+
+                   <button class="btn btn-sm btn-light btn-submit" type="submit" name="button">Send Prescription To Patient</button>
+             </div>
+
+           </div>
+
+            <textarea name="messege" rows="12" cols="240" placeholder="Prescription..."></textarea> <br>
+
+         </form>
+    </section>
+
+
+<%- include("partials/footer") -%>

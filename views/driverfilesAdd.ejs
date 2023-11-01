@@ -1,0 +1,57 @@
+<%- include("partials/header") -%>
+
+
+
+    <section id="main-navbar">
+
+      <nav class="navbar navbar-expand-lg fixed-top">
+     <div class="container-fluid">
+       <a class="navbar-brand" href="#"><strong><img src="images/angel.png" alt="">Doctors</strong></a>
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarNav">
+         <ul class="navbar-nav ms-auto">
+           <li class="nav-item">
+             <a href="/driverProfilePicUpdate" class="btn-update" type="button" name="button">Update ProfilePic</a>
+             <a href="/ambulance" class="btn btn-md btn-light btn-goback" type="button" name="button"><strong>Go Back</strong></a>
+           </li>
+         </ul>
+       </div>
+     </div>
+    </nav>
+    </section>
+
+
+    <section id="file-upload-doctor">
+
+        <h1><strong>Add Your Files</strong> </h1>
+      <form id="uploadForm" class="form-upload-doctor" action="/driverfilesAdd" method="post" enctype="multipart/form-data">
+    <div class="row">
+      <div class="col-sm-6">
+        <label for="ppic">Profile Pic</label> <br>
+        <input id="ppic" type="file" name="ppic"  required> <br>
+        <label for="mbbs">Driving Liscence</label> <br>
+        <input id="mbbs" type="file" name="dl" value="" required>
+
+        <!-- <input type="text" name="uname" value="" placeholder="User Name" required> <br> -->
+
+      </div>
+      <div class="col-sm-6">
+
+          <label for="idcard">ID Card</label> <br>
+          <input id="idcard" type="file" name="idcard"  required> <br>
+
+        <label for="md">PAN Card</label> <br>
+        <input id="md" type="file" name="pan" value="" required> <br>
+        <button class="btn btn-sm btn-light btn-doc-file" type="submit" name="button">Add Files</button> <br>
+      </div>
+
+    </div>
+  </form>
+
+
+    </section>
+
+
+    <%- include("partials/footer") -%>

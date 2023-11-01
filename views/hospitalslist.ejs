@@ -1,0 +1,115 @@
+<%- include("partials/header") -%>
+
+<section id="main-navbar-doctors">
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+ <div class="container-fluid">
+   <a class="navbar-brand" href="#"><strong><img src="images/angel.png" alt="">Doctors</strong></a>
+   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarNav">
+     <ul class="navbar-nav ms-auto">
+       <li class="nav-item">
+
+          <a class="btn btn-md btn-light btn-get-hospital btn-amb">Hospitals </a>
+          <a  class="btn btn-md btn-light btn-get-doctor btn-amb">Book An Appointment </a>
+                       <a href="mainpage.html" class="btn btn-md btn-light btn-gohome" type="button" name="button"><strong>Go Home</strong></a>
+         <a href="/hospitals" class="btn btn-md btn-light btn-goback" type="button" name="button"><strong>Go Back</strong></a>
+       </li>
+     </ul>
+   </div>
+ </div>
+</nav>
+</section>
+
+<section id="hos-search">
+
+  <h1><strong>Book An Appointment</strong> </h1>
+  <p>We are always ready to solve your problems.</p>
+  <form class="form-hospital-search" action="xdoctorslist.html" method="post">
+
+
+
+<i class="fa-solid fa-hospital"></i><input class="place" type="text" name="" placeholder="Hospital">
+<i class="fa-solid fa-user-doctor"></i><input class="category" type="text" name="" placeholder="Specialization">
+<i class="fa-solid fa-location-dot"></i><input class="place" type="text" name="" placeholder="place">
+<i class="fa-solid fa-calendar-days"></i><input type="date" name="" placeholder="Date">
+<button class="btn btn-md btn-light btn-search-doc" type="submit" name="button">Search Doctors</butto
+
+
+  </form>
+
+
+  <div class="row">
+
+  </div>
+
+</section>
+
+<section id="hospitals-list">
+
+  <p class="p-hos">Hospitals</p>
+
+    <div class="row row-hos-list">
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-body">
+            <img src="images/hospital1.png" alt="">
+
+            <div class="hos-details">
+                  <h1><strong>Metro Hospital</strong> </h1>
+                  <h3>Private Hospital</h3>
+                  <h3>Jalahalli, Bangalore</h3>
+                  <h3>24/7 working</h3>
+                  <h3 class="h3">Phone No:703466353</h3>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+</section>
+
+<section id="simply2">
+  <div class="row">
+    <div class="col-sm-4">
+        <h1><strong>Specializations</strong> </h1>
+        <ul>
+          <li>Cardiology</li>
+          <li>Nephrology</li>
+          <li>Neurology</li>
+          <li>Urology</li>
+        </ul>
+        <!-- <img src="images/sthetho1.png" alt=""> -->
+    </div>
+   <div class="col-sm-4">
+       <h1><strong>Hospitals</strong> </h1>
+       <ul>
+         <li>Metro Hospital</li>
+         <li>Shanti Hospital</li>
+         <li>Appolo Hospital</li>
+         <li>MIMs Hospital</li>
+       </ul>
+       <!-- <img src="images/hospital1.png" alt=""> -->
+   </div>
+   <div class="col-sm-4">
+       <h1><strong>Cities</strong> </h1>
+       <ul>
+         <li>Bangalore</li>
+         <li>Ernankulam</li>
+         <li>Kozhikode</li>
+         <li>Trivandrum</li>
+       </ul>
+   </div>
+
+
+
+
+  </div>
+</section>
+
+<%- include("partials/footer") -%>

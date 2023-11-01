@@ -1,0 +1,143 @@
+<%- include("partials/header") -%>
+
+<section id="main-navbar">
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+ <div class="container-fluid">
+   <a class="navbar-brand" href="#"><strong><img src="images/angel.png" alt="">Doctors</strong></a>
+   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarNav">
+     <ul class="navbar-nav ms-auto">
+       <li class="nav-item">
+
+         <!-- <a  class="btn btn-md btn-light btn-get-pre btn-amb">Prescription </a>
+         <a  class="btn btn-md btn-light btn-get-appo btn-amb"> Details </a>
+         <a  class="btn btn-md btn-light btn-cancel-appo btn-amb">Cancel </a>
+         <a  class="btn btn-md btn-light btn-get-his btn-amb"> History </a> -->
+         <a href="/mainpage" class="btn btn-md btn-light btn-goback" type="button" name="button"><strong>Go Back</strong></a>
+       </li>
+     </ul>
+   </div>
+ </div>
+</nav>
+</section>
+
+
+<section id="bookdetails">
+  <div class="row row1">
+
+    <div class="col-sm-4">
+      <div class="row">
+        <div class="col-sm-6">
+           <a class="h1 btn btn-sm btn-light btn-appo"><strong> Doctor </strong> <i class="fa-solid fa-truck-medical"></i> </a>
+        </div>
+        <div class="col-sm-6">
+            <a class="h1 btn btn-sm btn-light btn-prescription"><strong> Prescription </strong> <i class="fa-solid fa-truck-medical"></i> </a>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="row">
+        <div class="col-sm-6">
+             <a class="h1 btn btn-sm btn-light btn-ambu"><strong> Ambulance </strong> <i class="fa-solid fa-truck-medical"></i> </a>
+        </div>
+        <div class="col-sm-6">
+             <a class="h1 btn btn-sm btn-light btn-cancel-doc"><strong> Cancel Doctor </strong> <i class="fa-solid fa-truck-medical"></i> </a>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="col-sm-4">
+
+       <div class="row">
+         <div class="col-sm-6">
+           <a class="h1 btn btn-sm btn-light btn-cancel-dri"><strong> Cancel Driver </strong> <i class="fa-solid fa-truck-medical"></i> </a>
+         </div>
+         <div class="col-sm-6">
+            <a class="h1 btn btn-sm btn-light btn-history"><strong> History </strong> <i class="fa-solid fa-truck-medical"></i> </a>
+         </div>
+
+       </div>
+    </div>
+  </div>
+
+  <div class="row row2">
+    <div class="col-sm-4">
+      <form class="form-booking-list" name="formdriver" action="getprescription" method="post">
+<p class="p">Online Prescription</p>
+<input type="number" name="pid" placeholder="Patient ID" required>
+<button type="submit" class="btn btn-light btn-get-lists" name="button">Get Prescription</button>
+</form>
+
+    </div>
+    <div class="col-sm-4">
+
+      <form class="form-cancel-doc" name="formdriver" action="cancelAppointment" method="post">
+        <p class="p">Cancel Appointment</p>
+        <input  type="number" name="pid" placeholder="patient ID" required>
+        <button type="submit" class="btn btn-light btn-get-lists" name="button">Cancel</button>
+      </form>
+    </div>
+    <div class="col-sm-4">
+      <form class="form-cancel-amb" action="cancelBooking" method="post">
+        <p class="p">Cancel Booking</p>
+          <input type="number" name="bid" placeholder="Booking ID" required>
+        <button type="submit" class="btn btn-light btn-get-lists" name="button">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="form-ambulance-details">
+      <p class="p">Booking Details</p>
+    <form name="" action="getBookingDetails" method="post">
+      <input  type="number" name="bid" placeholder="Booking ID" required >
+      <button type="submit" class="btn btn-light btn-get-lists" name="button">Get Details</button>
+    </form>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="form-appointment-details">
+      <p class="p">Appointment Details</p>
+    <form name="formdriver" action="getAppoinmentDetails" method="post">
+      <input  type="number" name="pid" placeholder="Patient ID" required>
+      <button type="submit" class="btn btn-light btn-get-lists" name="button">Get Details</button>
+    </form>
+      </div>
+  </div>
+
+
+  <div class="col-sm-4">
+    <div class="form-history-amb">
+      <p class="p">Booking History</p>
+    <form name="" action="getBookingHistory" method="post">
+      <input  type="email" name="pemail" placeholder="Email ID" required>
+      <button type="submit" class="btn btn-light btn-get-lists" name="button">Get History</button>
+      <button type="button" class="btn btn-light btn-go-doc" name="button">Get Appointment History</button>
+    </form>
+      </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="form-history-doc">
+      <p class="p">Appointment History</p>
+    <form name="" action="getAppoinmentHistory" method="post">
+      <input  type="email" name="pemail" placeholder="Email ID" required>
+      <button type="submit" class="btn btn-light btn-get-lists" name="button">Get History</button>
+      <button type="button" class="btn btn-light btn-go-amb" name="button">Get Booking History</button>
+    </form>
+      </div>
+  </div>
+
+  <div class="image">
+      <img src="images/angel.png" alt="">
+  </div>
+
+</section>
+
+
+<%- include("partials/footer") -%>

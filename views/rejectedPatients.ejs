@@ -1,0 +1,65 @@
+<%- include("partials/header") -%>
+
+<section id="main-navbar-doctors">
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+ <div class="container-fluid">
+   <a class="navbar-brand" href="#"><strong><img src="images/angel.png" alt="">Doctors</strong></a>
+   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarNav">
+     <ul class="navbar-nav ms-auto">
+       <li class="nav-item">
+
+
+         <a href="/ambulance" class="btn btn-md btn-light btn-goback" type="button" name="button"><strong>Go Back</strong></a>
+       </li>
+     </ul>
+   </div>
+ </div>
+</nav>
+</section>
+
+
+<section id="p-lists">
+
+  <h1><strong>Rejected Patients</strong> </h1>
+  <div class="container">
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Age</th>
+        <th>Phone No</th>
+        <th>Email ID</th>
+        <th>Booking Date</th>
+        <th>Date</th>
+      </tr>
+<% patients.forEach((patient) => { %>
+        <tr class="tr">
+          <td id="id"><%= patient.patientId %></td>
+          <td class="name"><%= patient.patientName %></td>
+          <td class="age"><%= patient.patientGender %></td>
+          <td class="age">  <%= patient.patientAge %></td>
+          <td class="date"><%= patient.patientPhoneNo %></td>
+          <td class="mail"><%= patient.patientEmail %></td>
+          <td class="data"><%= patient.bookingDate %></td>
+          <td class="date"><%= patient.driverDate %></td>
+
+        </tr>
+      <% }) %>
+    </table>
+  </div>
+
+  <div class="image">
+      <img src="images/angel.png" alt="">
+  </div>
+
+</section>
+
+
+
+
+<%- include("partials/footer") -%>

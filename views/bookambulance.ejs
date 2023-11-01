@@ -1,0 +1,104 @@
+<%- include("partials/header") -%>
+
+<section id="main-navbar">
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+ <div class="container-fluid">
+   <a class="navbar-brand" href="#"><strong><img src="images/angel.png" alt="">Doctors</strong></a>
+   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarNav">
+     <ul class="navbar-nav ms-auto">
+       <li class="nav-item">
+
+         <!-- <a class="btn btn-md btn-light btn-get-hospital btn-amb">Doctor </a>
+         <a  class="btn btn-md btn-light btn-get-doctor btn-amb">Select Hospital </a> -->
+
+         <a href="/ambulancelists" class="btn btn-md btn-light btn-goback" type="button" name="button"><strong>Go Back</strong></a>
+       </li>
+     </ul>
+   </div>
+ </div>
+</nav>
+</section>
+
+
+
+
+<section id="taking-appointment">
+
+
+
+ <div class="row appointment">
+   <!-- <form class="" action="/doctorlist" method="post">
+    <button class="btn-close btn-sm btn-light text-reset" type="submit" name="button"><strong></strong></button>
+   </form> -->
+
+    <div class="col-lg-6 row1">
+      <form class="form-appointment" action="/confirmbooking" method="post">
+        <h2><strong>Sent request to book</strong> </h2>
+        <input type="text" name="pname" value="" placeholder="Name" onkeydown="return /[a-zA-Z]/i.test(event.key)" required> <br>
+        <input id="male" type="radio" name="gender" value="Male" required><label class="label1"for="male">Male</label>
+        <input id="female"type="radio" name="gender" value="Female" required><label class="label2"for="female">Female</label>
+        <input id="others" type="radio" name="gender" value="Others" required><label class="label3"for="others">Others</label>
+        <br>
+        <input type="Number" name="page" value="" placeholder="Age" maxlength="2" required >
+        <input type="email" name="pemail" value="" placeholder="Email ID" pattern=".+@globex\.com" required>
+        <input type="Number" name="pphoneno" value="" placeholder="Phone No" maxlength="10" minlength="10" required >
+        <input type="hidden" name="driverName" value="<%= driverName %>">
+        <input type="hidden" name="driverUserName" value="<%= driverUserName %>">
+        <input type="hidden" name="hospital" value="<%= hospitalName %>">
+        <input type="hidden" name="driverPlace" value="<%= hospitalPlace %>">
+        <input type="hidden" name="driverCity" value="<%= hospitalCity %>">
+        <input type="hidden" name="date" value="<%= date %>">
+        <input type="hidden" name="time" value="<%= time %>">
+        <input type="hidden" name="vehicleNo" value="<%= vehicleNo %>">
+        <input type="hidden" name="phoneNo" value="<%= phoneNo %>">
+
+        <button class="btn btn-light btn-md btn-confirm" type="submit" name="button">Sent Request</button>
+
+      </form>
+    </div>
+    <div class="col-lg-6 row1">
+      <p>Confirmation</p>
+      <h1><strong>Give your details and sent request to book.</strong> </h1>
+      <p class="para">You will get a code through confirmation mail</p>
+      <h4 class="time"><span id="countdown">60</span></h4>
+    </div>
+
+ </div>
+</section>
+<section id="img-section-amb">
+  <img src="images/ambulance.png" alt="">
+</section>
+
+
+
+<script>
+  // Initialize the countdown value to 5
+  var countdown = 60;
+
+  // Function to update the countdown display and redirect to the main page when countdown reaches 0
+  function updateCountdown() {
+    // Display the current countdown value
+    document.getElementById("countdown").innerText = countdown;
+
+    // Decrement the countdown value
+    countdown--;
+
+    // Check if countdown reached 0, then redirect to the main page
+    if (countdown < 0) {
+      window.location.href = "/mainpage";
+    } else {
+      // Continue updating the countdown every second (1000 milliseconds)
+      setTimeout(updateCountdown, 1000);
+    }
+  }
+
+  // Call the updateCountdown function to start the countdown
+  updateCountdown();
+</script>
+
+
+<%- include("partials/footer") -%>

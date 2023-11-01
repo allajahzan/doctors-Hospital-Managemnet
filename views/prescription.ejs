@@ -1,0 +1,72 @@
+<%- include("partials/header") -%>
+
+<section id="main-navbar">
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+ <div class="container-fluid">
+   <a class="navbar-brand" href="#"><strong><img src="images/angel.png" alt="">Doctors</strong></a>
+   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarNav">
+     <ul class="navbar-nav ms-auto">
+       <li class="nav-item">
+
+
+         <a href="/bookdetails" class="btn btn-md btn-light btn-goback" type="button" name="button"><strong>Go Back</strong></a>
+       </li>
+     </ul>
+   </div>
+ </div>
+</nav>
+</section>
+
+<section id="prescription">
+
+   <h3><strong>Online Prescription</strong> </h3>
+  <div id="container-pres" class="container">
+<!-- <h6><strong>Patient's Detaill</strong> </h6> -->
+
+   <div class="name-details">
+      <h6>Patient ID : <%= patientId %> </h6>
+      <h6>Name : <%= patientName %> </h6>
+      <h6>Sex : <%= patientGender %> </h6>
+
+   </div>
+
+   <div class="date-details">
+        <h6>Age : <%= patientAge %> </h6>
+        <h6>Phone No : <%= patientPhoneNo %> </h6>
+        <h6>Date : <%= doctorHospitalDate %> </h6>
+   </div>
+
+     <hr>
+
+<!-- <h2><strong>Prescription</strong> </h2> -->
+  <div class="row row-pres">
+   <h6 class="pres"> <%= prescription %> </h6>
+
+  </div>
+
+
+  <hr class="hr">
+   <!-- <h6 class="h6"><strong>Doctors's Detaill</strong> </h6> -->
+  <div class="doc-details">
+     <h6>Dr, <%= doctorName %> </h6>
+     <h6><%= doctorSpecialization %> </h6>
+  </div>
+
+  <div class="do-details">
+    <h6><%= doctorHospitalName %> </h6>
+    <h6><%= doctorHospitalPlace %>, <%= doctorHospitalCity %> </h6>
+    <br>
+  </div>
+<img src="images/tick.png" alt="">
+
+
+
+  </div>
+
+</section>
+
+<%- include("partials/footer") -%>

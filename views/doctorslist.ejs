@@ -1,0 +1,102 @@
+<%- include("partials/header") -%>
+
+<section id="main-navbar-doctors">
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+ <div class="container-fluid">
+   <a class="navbar-brand" href="#"><strong><img src="images/angel.png" alt="">Doctors</strong></a>
+   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarNav">
+     <ul class="navbar-nav ms-auto">
+       <li class="nav-item">
+
+         <!-- <a class="btn btn-md btn-light btn-get-hospital btn-amb">Doctor </a>
+         <a  class="btn btn-md btn-light btn-get-doctor btn-amb">Select Hospital </a> -->
+
+         <a href="/mainpage" class="btn btn-md btn-light btn-goback" type="button" name="button"><strong>Go Back</strong></a>
+       </li>
+     </ul>
+   </div>
+ </div>
+</nav>
+</section>
+
+
+<section id="doctors-list">
+
+  <p class="h5-doctor-lists"><span id="specialization"></span>s</p>
+
+  <!-- doctorslist.ejs -->
+  <div class="row">
+      <% doctors.forEach((doctor, index) => { %>
+    <div class="col-sm-4 doctor-lists">
+      <div class="card">
+        <div class="card-body">
+          <img src="<%= doctor.doctorProfilePic %>" alt="profile pic">
+          <div class="name-details">
+            <h1><strong><%= doctor.doctorName %></strong></h1>
+            <h3><%= doctor.doctorQualification %></h3>
+            <h3>Year Of Experience: <%= doctor.doctorYearOfExp %></h3>
+            <h3><%= doctor.doctorHospitalPlace %>, <%= doctor.doctorHospitalCity %></h3>
+
+          </div>
+          <div class="time-details">
+            <h3><%= doctor.doctorHospitalName %></h3>
+            <h3>Date: <%= searchDate %></h3>
+            <h3>From: <%= doctor.doctorStartTime %></h3>
+
+          </div>
+          <div class="button-book">
+            <form action="/takeappointment" method="POST">
+              <input type="hidden" name="doctorName" value="<%= doctor.doctorName %>">
+              <input type="hidden" name="doctorUserName" value="<%= doctor.doctorUserName %>">
+              <input type="hidden" name="specialization" value="<%= doctor.doctorSpecialization %>">
+              <input type="hidden" name="hospitalName" value="<%= doctor.doctorHospitalName %>">
+              <input type="hidden" name="hospitalPlace" value="<%= doctor.doctorHospitalPlace %>">
+              <input type="hidden" name="hospitalCity" value="<%= doctor.doctorHospitalCity %>">
+              <input type="hidden" name="date" value="<%= searchDate %>">
+              <input type="hidden" name="time" value="<%= doctor.doctorStartTime %>">
+              <button id="btn<%= index %>" class="btn btn-light btn-take-appointment" type="submit">Take Appointment</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% }) %>
+</div>
+
+
+
+</section>
+
+
+<!--
+<section id="taking-appointment">
+
+ <div class="row appointment">
+   <a href="doctorslist.html" class="btn-close btn-sm btn-light text-reset" name="button"><strong></strong></a>
+    <div class="col-lg-6 row1">
+      <form class="form-appointment" action="doctorspage.html" method="post">
+        <input type="text" name="" value="" placeholder="Name"> <br>
+        <input id="male" type="radio" name="gender" value=""><label class="label1"for="male">Male</label>
+        <input id="female"type="radio" name="gender" value=""><label class="label2"for="female">Female</label>
+        <input id="others" type="radio" name="gender" value=""><label class="label3"for="others">Others</label>
+        <br>
+        <input type="Number" name="" value="" placeholder="Age">
+        <input type="email" name="" value="" placeholder="Email ID">
+        <input type="Number" name="" value="" placeholder="Phone No">
+        <button class="btn btn-light btn-md btn-confirm" type="submit" name="button">Confirm</button>
+      </form>
+    </div>
+    <div class="col-lg-6 row1">
+      <h1><strong>Give your details and confirm the slot.</strong> </h1>
+      <p>You will get a confirmation mail</p>
+      <img src="images/sthetho.png" alt="">
+    </div>
+
+ </div>
+</section> -->
+
+<%- include("partials/footer") -%>

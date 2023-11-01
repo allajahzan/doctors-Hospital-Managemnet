@@ -1,0 +1,103 @@
+<%- include("partials/header") -%>
+
+<section id="main-navbar-doctors">
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+ <div class="container-fluid">
+   <a class="navbar-brand" href="#"><strong><img src="images/angel.png" alt="">Doctors</strong></a>
+   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarNav">
+     <ul class="navbar-nav ms-auto">
+       <li class="nav-item">
+
+
+         <a href="/ambulance" class="btn btn-md btn-light btn-goback" type="button" name="button"><strong>Go Back</strong></a>
+       </li>
+     </ul>
+   </div>
+ </div>
+</nav>
+</section>
+
+
+<section id="p-lists">
+
+  <h1><strong>Patients List</strong> </h1>
+  <div class="container">
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Age</th>
+        <th>Phone No</th>
+        <th>Email</th>
+        <th>Date</th>
+        <th>Booking Date</th>
+        <th>Action</th>
+      </tr>
+      <% bookings.forEach((booking) => { %>
+        <tr class="tr">
+          <td><%= booking.patientId %></td>
+          <td class="name"><%= booking.patientName %></td>
+          <td class="age"><%= booking.patientGender %></td>
+          <td class="age"><%= booking.patientAge %></td>
+          <td class="date"><%= booking.patientPhoneNo %></td>
+          <td class="mail"><%= booking.patientEmail %></td>
+          <td class="date"><%= booking.driverDate %></td>
+          <td class="data"><%= booking.bookingDate %></td>
+
+          <td class="action">
+
+            <div class="row">
+
+              <div class="col-sm-6">
+                <form action="/acceptPatient" method="post">
+                  <input type="hidden" name="patientId" value="<%= booking.patientId %>">
+                  <input type="hidden" name="patientEmail" value="<%= booking.patientEmail %>">
+                  <input type="hidden" name="patientName" value="<%= booking.patientName %>">
+                  <input type="hidden" name="driverName" value="<%= booking.driverName %>">
+                  <input type="hidden" name="driverHospital" value="<%= booking.driverHospital %>">
+                  <input type="hidden" name="driverPhoneNo" value="<%= booking.driverPhoneNo %>">
+                  <input type="hidden" name="driverVehicleNo" value="<%= booking.driverVehicleNo %>">
+                  <input type="hidden" name="driverPlace" value="<%= booking.driverPlace %>">
+                  <input type="hidden" name="driverCity" value="<%= booking.driverCity %>">
+                  <input type="hidden" name="driverDate" value="<%= booking.driverDate %>">
+                  <input type="hidden" name="driverTime" value="<%= booking.driverTime %>">
+                  <button class="btn btn-sm btn-light btn-accept" type="submit">Accept</button>
+                </form>
+              </div>
+              <div class="col-sm-6">
+                <form action="/rejectPatient" method="post">
+                  <input type="hidden" name="patientId" value="<%= booking.patientId %>">
+                  <input type="hidden" name="patientEmail" value="<%= booking.patientEmail %>">
+                  <input type="hidden" name="driverName" value="<%= booking.driverName %>">
+                  <input type="hidden" name="driverHospital" value="<%= booking.driverHospital %>">
+                  <input type="hidden" name="driverDate" value="<%= booking.driverDate %>">
+                  <input type="hidden" name="driverTime" value="<%= booking.driverTime %>">
+                  <button class="btn btn-sm btn-light btn-accept" type="submit">Reject</button>
+                </form>
+              </div>
+
+            </div>
+
+
+          </td>
+        </tr>
+      <% }) %>
+    </table>
+  </div>
+
+
+  <div class="image">
+      <img src="images/angel.png" alt="">
+  </div>
+
+</section>
+
+
+
+
+<%- include("partials/footer") -%>

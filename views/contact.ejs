@@ -1,0 +1,50 @@
+<%- include("partials/header") -%>
+
+<section id="main-navbar">
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+ <div class="container-fluid">
+   <a class="navbar-brand" href="#"><strong><img src="images/angel.png" alt="">Doctors</strong></a>
+   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarNav">
+     <ul class="navbar-nav ms-auto">
+       <li class="nav-item">
+
+
+         <a href="/mainpage" class="btn btn-md btn-light btn-goback" type="button" name="button"><strong>Go Back</strong></a>
+       </li>
+     </ul>
+   </div>
+ </div>
+</nav>
+</section>
+
+
+<section id="contact">
+
+
+  <div class="row">
+    <div class="col-sm-6">
+      <p>For Users</p>
+      <h1><strong>Contact The Admin</strong></h1>
+      <p class="para">You can either send messege here or call to the number +917034661353</p>
+
+    </div>
+    <div class="col-sm-6">
+      <form class="form-contact" action="contact" method="post">
+        <h2><strong>Send Messege Here!</strong></h2>
+       <input type="text" name="name" placeholder="Name" onkeydown="return /[a-zA-Z]/i.test(event.key)" required> <br>
+       <input type="email" name="email" placeholder="Email ID" required> <br>
+       <textarea name="msg" rows="6" cols="60" placeholder="Type..." required></textarea> <br>
+       <button class="btn btn-sm btn-light btn-send" type="submit" name="button">Send Messege</button> <br>
+      </form>
+    </div>
+
+  </div>
+
+
+</section>
+
+<%- include("partials/footer") -%>

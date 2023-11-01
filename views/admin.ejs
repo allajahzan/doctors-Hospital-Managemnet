@@ -1,0 +1,378 @@
+<%- include("partials/header") -%>
+
+<section id="main-navbar">
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+ <div class="container-fluid">
+   <a class="navbar-brand" href="#"><strong><img src="images/angel.png" alt="">Doctors</strong></a>
+   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarNav">
+     <ul class="navbar-nav ms-auto">
+       <li class="nav-item">
+
+
+
+
+<a>
+
+ <a href="mainpage" class="btn btn-md btn-light btn-goback" type="button" name="button"><strong>Go Back</strong></a>
+
+</a>
+
+       </li>
+     </ul>
+   </div>
+ </div>
+</nav>
+</section>
+
+
+
+<section id="admin-page">
+  <div class="row row1">
+    <div class="col-sm-4">
+
+     <div class="row">
+       <div class="col-sm-6">
+             <a class="h1 btn btn-sm btn-light btn-dash"><strong> Dash Board  </strong> <i class="fa-solid fa-truck-medical"></i> </a>
+       </div>
+       <div class="col-sm-6">
+         <form class="" action="Messages" method="post">
+             <button type="submit" class="h1 btn btn-sm btn-light btn-msg"><strong> Messeges </strong> <i class="fa-solid fa-truck-medical"></i> </button>
+         </form>
+
+       </div>
+
+     </div>
+
+    </div>
+    <div class="col-sm-4">
+      <div class="row">
+        <div class="col-sm-6">
+           <!-- <a  class="h1 btn btn-sm btn-light btn-hos btn-prebook"><strong> Hospital </strong> <i class="fa-solid fa-truck-medical"></i> </a> -->
+        </div>
+        <div class="col-sm-6">
+            <a class="h1 btn btn-sm btn-light btn-upload"><strong> Doctors </strong> <i class="fa-solid fa-truck-medical"></i> </a>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-sm-4">
+
+       <div class="row">
+         <div class="col-sm-6">
+           <a class="h1 btn btn-sm btn-light btn-profile"><strong> Drivers </strong> <i class="fa-solid fa-truck-medical"></i> </a>
+         </div>
+         <div class="col-sm-6">
+            <a class="h1 btn btn-sm btn-light btn-account"><strong> Admin </strong> <i class="fa-solid fa-truck-medical"></i> </a>
+         </div>
+
+       </div>
+    </div>
+  </div>
+
+
+  <div class="row row2">
+    <div class="col-sm-4">
+      <form class="form-booking-list" name="formdriver" action="patientslist" method="post">
+<p class="p">Add The Hospitals</p>
+<input type="text" name="date" placeholder="yyyy-mm-dd" required>
+<input type="hidden" name="doctorUserName" id="doctorUserName">
+<button type="submit" class="btn btn-light btn-get-lists" name="button">Add Hospitals</button>
+</form>
+
+    </div>
+    <div class="col-sm-4">
+      <div class="form-update-prof" >
+      <form name="formdriver" action="approvedDrivers" method="post">
+        <input  type="hidden" name="doctorUser" id="doctorUserpro" >
+        <button type="submit" class="btn btn-light btn-get-lists" name="button">Approved Drivers</button>
+      </form>
+      <p>Get Drivers Lists</p>
+      <form class="" action="pendingDrivers" method="post">
+        <button  type="submit" class="btn btn-light btn-get-lists btn-update-doctor" name="button">Pending Drivers</button>
+      </form>
+     </div>
+    </div>
+
+    <div class="col-sm-4">
+      <form class="form-delete-prof" action="logoutAdmin" method="post">
+          <h2><i class="fa-solid fa fa-user"></i> <span id="adminName"></span></h2>
+          <h2><i class="fa-solid  fa fa-envelope"></i><span id="adminPassword"></span></h2>
+        <button type="submit" class="btn btn-light btn-get-lists" name="button">Logout</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="col-sm-4" >
+    <div class="form-upload-prof">
+    <form class="" name="formdriver" action="approvedDoctors" method="post">
+      <button type="submit" class="btn btn-light btn-get-lists" name="button">Approved Doctor</button>
+      </form>
+      <p>Get Doctors Lists</p>
+    <form class="" action="pendingDoctors" method="post">
+      <button  type="submit" class="btn btn-light btn-get-lists btn-update-doctor" name="button">Pending Doctors</button>
+    </form>
+  </div>
+      </div>
+
+  <div class="image">
+      <img src="images/angel.png" alt="">
+  </div>
+
+  </section>
+
+
+<section id="home">
+
+  <div class="row row-dash">
+    <div class="col-sm-4">
+      <div class="card">
+        <!-- <i id="refreshDoctor" class="fa-solid fa-arrows-rotate"></i> -->
+        <form class="" action="doctorsLists" method="post">
+        <h1><strong> Doctors</strong> </h1>
+        <h2><strong><span id="totalDoctors"></span></strong></h2>
+        <button class="btn btn-sm btn-light btn-get-data" type="submit" name="button">Get Lists</button>
+      </form>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card">
+        <form class="" action="approvedDoctorsLists" method="post">
+          <!-- <i id="" class="fa-solid fa-arrows-rotate"></i> -->
+        <h1><strong> Approved Doctors</strong> </h1>
+        <h2><strong><span id="totalApprovedDoctors"></span></strong></h2>
+        <button class="btn btn-sm btn-light btn-get-data" type="submit" name="button">Get Lists</button>
+      </form>
+      </div>
+
+    </div>
+    <div class="col-sm-4">
+      <div class="card">
+        <form class="" action="pendingDoctorsLists" method="post">
+          <!-- <i id="" class="fa-solid fa-arrows-rotate"></i> -->
+        <h1><strong>Pending Doctors</strong> </h1>
+        <h2><strong><span id="totalPendingDoctors"></span></strong></h2>
+        <button class="btn btn-sm btn-light btn-get-data" type="submit" name="button">Get Lists</button>
+      </form>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card">
+        <form class="" action="driversLists" method="post">
+          <!-- <i id="" class="fa-solid fa-arrows-rotate"></i> -->
+        <h1><strong> Drivers</strong> </h1>
+        <h2><strong><span id="totalDrivers"></span></strong></h2>
+        <button class="btn btn-sm btn-light btn-get-data" type="submit" name="button">Get Lists</button>
+      </form>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card">
+        <form class="" action="approvedDriversLists" method="post">
+          <!-- <i id="" class="fa-solid fa-arrows-rotate"></i> -->
+        <h1><strong>Approved Drivers</strong> </h1>
+        <h2><strong><span id="totalApprovedDrivers"></span></strong></h2>
+        <button class="btn btn-sm btn-light btn-get-data" type="submit" name="button">Get Lists</button>
+      </form>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card">
+        <form class="" action="pendingDriversLists" method="post">
+          <!-- <i id="" class="fa-solid fa-arrows-rotate"></i> -->
+        <h1><strong> Pending Drivers</strong> </h1>
+        <h2><strong><span id="totalPendingDrivers"></span></strong></h2>
+        <button class="btn btn-sm btn-light btn-get-data" type="submit" name="button">Get Lists</button>
+      </form>
+      </div>
+
+    </div>
+    <div class="col-sm-4">
+      <div class="card">
+        <form class="" action="usersLists" method="post">
+          <!-- <i id="" class="fa-solid fa-arrows-rotate"></i> -->
+        <h1><strong> Users</strong> </h1>
+        <h2><strong><span id="totalUsers"></span></strong></h2>
+        <button class="btn btn-sm btn-light btn-get-data" type="submit" name="button">Get Lists</button>
+      </form>
+      </div>
+
+    </div>
+
+    <div class="col-sm-4">
+
+    </div>
+    <div class="col-sm-4">
+
+    </div>
+
+  </div>
+</section>
+
+<section id="messege">
+
+<h1><strong>Messeges from different users</strong></h1>
+     <table>
+       <tr id="0">
+         <th>ID</th>
+         <th>Name</th>
+         <th>Email ID</th>
+         <th>Messege</th>
+         <th>Read/Unread</th>
+       </tr>
+       <tr id="tr1">
+         <td class="id">1</td>
+         <td class="name">Ahsan Allaj pk</td>
+         <td>ahsanallajpk222gmail.com</td>
+         <td class="msg"> This Website is really helpful This Website is really helpful This Website is really helpful</td>
+         <td>
+         <!-- <form class="" action="admin.html" method="post"> -->
+           <button id="btn1" onclick="read(1)" class="btn btn-sm btn-light btn-read" type="submit" name="button">Read</button>
+         <!-- </form> -->
+         </td>
+       </tr>
+
+     </table>
+</section>
+
+
+<section id="doc-delete">
+
+  <h1><strong>Requests to delete profile</strong></h1>
+  <table>
+   <tr>
+     <th>ID</th>
+     <th>Name</th>
+     <th>Email ID</th>
+     <th>ID Card</th>
+     <th>MBBS Certificate</th>
+     <th>MD Certificate</th>
+     <th>Accept/NotAccept</th>
+   </tr>
+   <tr>
+     <td>1</td>
+     <td>Ahsan allaj pk</td>
+     <td class="mail">ahsanalljpk22@gmail.com</td>
+     <td class="cert">id.pdf</td>
+     <td class="cert">mbbs.pdf</td>
+     <td class="cert">md.pdf</td>
+     <td class="clk">
+        <button id="btn1" onclick="read(1)" class="btn btn-sm btn-light btn-delete" type="submit" name="button">Accept</button>
+     </td>
+   </tr>
+  </table>
+
+</section>
+
+<section id="hos">
+
+  <h1><strong>Add the details of hospitals</strong></h1>
+
+    <form class="form-hos-add" action="admin.html" method="post">
+       <div class="row">
+
+
+
+         <div class="col-sm-4">
+
+           <div class="row">
+         <div class="small-12 medium-2 large-2 columns">
+         <div class="circle">
+         <img class="profile-pic upload-button" src="images/profile.png">
+         <input class="file-upload" type="file" accept="image/*"/>
+         </div>
+         <div class="p-image">
+         <i class="fa fa-camera"></i>
+         </div>
+         </div>
+         </div>
+
+            <input class="inputs" type="text" name="" value="" placeholder="Hospital Name">
+            <select class="inputs" name="" id="hospitalSelect">
+               <option id="option" value="Private Hospital">Private Hospital</option>
+               <option id="option"   value="Government Hospital">Government Hospital</option>
+            </select>
+            <button class="btn btn-sm btn-light btn-submit inputs" type="submit" name="button">Submit</button>
+         </div>
+         <div class="col-sm-4">
+           <select class="inputs" name="">
+              <option  id="option" value="Bangalore">Bangalore</option>
+              <option id="option" value="Kochi">Kochi</option>
+              <option id="option" value="Calicut">Calicut</option>
+              <option id="option" value="Trivandrum">Trivandrum</option>
+           </select>
+           <input  class="inputs" type="text" name="" value="" placeholder="Place Name">
+         </div>
+
+         <div class="col-sm-4">
+           <select class="inputs" name="">
+              <option  id="option" value="24/7 Working">24/7 Working</option>
+              <option id="option" value="18/7 Working">18/7 Working</option>
+              <option id="option" value="12/7 Working">12/7 Working</option>
+           </select>
+           <input class="inputs" type="text" name="" value="" placeholder="Phone No">
+         </div>
+
+       </div>
+    </form>
+</section>
+
+
+
+
+
+
+<section id="amb-delete">
+
+  <h1><strong>Requests to delete ambulance drivers profile</strong></h1>
+  <table>
+   <tr class="amb3">
+     <th>ID</th>
+     <th>Name</th>
+     <th>Email ID</th>
+     <th>City</th>
+     <th>Place</th>
+     <th>Phone No</th>
+     <th>Accept/NotAccept</th>
+   </tr>
+   <tr>
+     <td>1</td>
+     <td>Ahsan allaj pk</td>
+     <td class="mail">ahsanalljpk22@gmail.com</td>
+     <td class="cert">Bangalore</td>
+     <td class="cert">Jalahalli</td>
+     <td class="cert">7034661353</td>
+     <td class="clk">
+        <button id="btn1" onclick="read(1)" class="btn btn-sm btn-light btn-delete-amb" type="submit" name="button">Accept</button>
+     </td>
+   </tr>
+   <tr>
+     <td>1</td>
+     <td>Ahsan allaj pk</td>
+     <td class="mail">ahsanalljpk22@gmail.com</td>
+     <td class="cert">Bangalore</td>
+     <td class="cert">Jalahalli</td>
+     <td class="cert">7034661353</td>
+     <td class="clk">
+        <button id="btn1" onclick="read(1)" class="btn btn-sm btn-light btn-delete-amb" type="submit" name="button">Accept</button>
+     </td>
+   </tr>
+   <tr>
+     <td>1</td>
+     <td>Ahsan allaj pk</td>
+     <td class="mail">ahsanalljpk22@gmail.com</td>
+     <td class="cert">Bangalore</td>
+     <td class="cert">Jalahalli</td>
+     <td class="cert">7034661353</td>
+     <td class="clk">
+        <button id="btn1" onclick="read(1)" class="btn btn-sm btn-light btn-delete-amb" type="submit" name="button">Accept</button>
+     </td>
+   </tr>
+  </table>
+
+</section>
+
+<%- include("partials/footer") -%>

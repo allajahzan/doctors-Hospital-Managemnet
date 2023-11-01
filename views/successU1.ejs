@@ -1,0 +1,40 @@
+<%- include("partials/header") -%>
+
+
+
+<% if (success) { %>
+  <div id="error-toast" style="display: none;"></div>
+  <!-- Load SweetAlert library -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.all.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      Swal.fire({
+        icon: 'success',
+        title: 'Success!',
+        text: '<%= success %>',
+        toast: true,
+        position: 'center',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        showClass: {
+          popup: 'swal2-noanimation',
+          toast: 'swal2-animate-success-toast'
+        },
+        hideClass: {
+          popup: '',
+          toast: 'swal2-animate-fade'
+        }
+      }).then(function() {
+        window.location.href = "/login"; // Redirect to the doctors page
+      });
+    });
+  </script>
+<% } %>
+
+    <img class="error-page-img" src="images/doctor1.png" alt="">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="index.js" charset="utf-8"></script>
+      </body>
+    </html>

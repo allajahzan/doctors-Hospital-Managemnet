@@ -1,0 +1,69 @@
+<%- include("partials/header") -%>
+
+<section id="main-navbar-doctors">
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+ <div class="container-fluid">
+   <a class="navbar-brand" href="#"><strong><img src="images/angel.png" alt="">Doctors</strong></a>
+   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarNav">
+     <ul class="navbar-nav ms-auto">
+       <li class="nav-item">
+         <a href="/mainpage" class="btn btn-md btn-light btn-goback" type="button" name="button"><strong>Go Back</strong></a>
+       </li>
+     </ul>
+   </div>
+ </div>
+</nav>
+</section>
+
+<section id="ambulance-list">
+<p>Ambulance Drivers</p>
+
+<div class="row">
+  <% drivers.forEach((driver, index) => { %>
+    <div class="col-sm-4 doctor-lists">
+      <div class="card">
+        <div class="card-body">
+          <img src="<%= driver.driverProfilePic %>" alt="Profile Picture">
+          <div class="name-details">
+            <h1><strong><%= driver.driverName %></strong></h1>
+            <h3>Age: <%= driver.driverAge %></h3>
+            <h3><%= driver.driverPhoneNo %></h3>
+
+            <h3><%= driver.driverVehicleNo %></h3>
+              <h3><%= driver.driverPlace %>, <%= driver.driverCity %></h3>
+          </div>
+          <div class="time-details">
+            <h3><%= driver.driverHospital %></h3>
+            <h3>Date: <%= searchDate %></h3>
+            <h3>Time: <%= driver.driverTime %></h3>
+          </div>
+          <div class="button-book">
+            <form action="/bookambulance" method="POST">
+              <input type="hidden" name="driverName" value="<%= driver.driverName %>">
+              <input type="hidden" name="driverUserName" value="<%= driver.driverUserName %>">
+              <input type="hidden" name="hospitalName" value="<%= driver.driverHospital%>">
+              <input type="hidden" name="hospitalPlace" value="<%= driver.driverPlace %>">
+              <input type="hidden" name="hospitalCity" value="<%= driver.driverCity %>">
+              <input type="hidden" name="date" value="<%= searchDate %>">
+              <input type="hidden" name="time" value="<%= driver.driverTime %>">
+              <input type="hidden" name="vlno" value="<%= driver.driverVehicleNo %>">
+              <input type="hidden" name="phoneno" value="<%= driver.driverPhoneNo %>">
+              <button id="btn<%= index %>" class="btn btn-light btn-take-book" type="submit">Book Ambulance</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% }) %>
+</div>
+
+
+
+
+</section>
+
+<%- include("partials/footer") -%>

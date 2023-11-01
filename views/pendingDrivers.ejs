@@ -1,0 +1,77 @@
+
+<%- include("partials/header") -%>
+
+<section id="main-navbar-doctors">
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+ <div class="container-fluid">
+   <a class="navbar-brand" href="#"><strong><img src="images/angel.png" alt="">Doctors</strong></a>
+   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarNav">
+     <ul class="navbar-nav ms-auto">
+       <li class="nav-item">
+
+
+
+
+<a>
+
+ <a href="admin" class="btn btn-md btn-light btn-goback" type="submit" name="button"><strong>Go Back</strong></a>
+
+</a>
+
+       </li>
+     </ul>
+   </div>
+ </div>
+</nav>
+</section>
+
+<section id="amb-pending">
+
+  <h1><strong>Pending lists of ambulance drivers</strong></h1>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Phone No</th>
+      <th>Hospital</th>
+      <th>City</th>
+      <th>ID Card</th>
+      <th>License</th>
+      <th>Pan Card</th>
+      <th>Approve/Pending</th>
+    </tr>
+
+    <% drivers.forEach((driver) => { %>
+      <tr>
+        <td><%= driver.driverId %></td>
+        <td class="name"><%= driver.driverName %></td>
+        <td class="mail"><%= driver.driverPhoneNo %></td>
+        <td class="mail"><%= driver.driverHospital %></td>
+        <td class="mail"><%= driver.driverCity %></td>
+        <td class="cert"><a href="<%= driver.driverIdCard %>" target="_blank">View</a></td>
+        <td class="cert"><a href="<%= driver.driverLiscence %>" target="_blank">View</a></td>
+        <td class="cert"><a href="<%= driver.driverPanCard %>" target="_blank">View</a></td>
+        <td class="clk">
+          <form class="approve-form" action="/pendingDriver" method="post">
+    <input type="hidden" name="driverUserName" value="<%= driver.driverUserName %>">
+    <button  class="btn btn-sm btn-light btn-pending-amb" type="submit" name="button">Approve</button>
+  </form>
+        </td>
+      </tr>
+    <% }) %>
+  </table>
+
+
+
+  <div class="image">
+      <img src="images/angel.png" alt="">
+  </div>
+
+</section>
+
+
+<%- include("partials/footer") -%>

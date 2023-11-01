@@ -1,0 +1,72 @@
+<%- include("partials/header") -%>
+
+<section id="main-navbar-doctors">
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+ <div class="container-fluid">
+   <a class="navbar-brand" href="#"><strong><img src="images/angel.png" alt="">Doctors</strong></a>
+   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarNav">
+     <ul class="navbar-nav ms-auto">
+       <li class="nav-item">
+
+
+
+
+<a>
+
+ <a href="admin" class="btn btn-md btn-light btn-goback" type="submit" name="button"><strong>Go Back</strong></a>
+
+</a>
+
+       </li>
+     </ul>
+   </div>
+ </div>
+</nav>
+</section>
+
+<section id="doc-approve">
+
+  <h1><strong>Lists of approved doctors</strong></h1>
+  <table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>Email</th>
+    <th>Specialization</th>
+    <th>Year OE</th>
+    <th>Hospital</th>
+    <th>Place</th>
+    <th>City</th>
+  </tr>
+
+  <% doctors.forEach((doctor) => { %>
+  <tr>
+    <td><%= doctor.doctorId %></td>
+    <td class="name"><%= doctor.doctorName %></td>
+    <td class="sml"><%= doctor.doctorGender %></td>
+    <td class="email"><%= doctor.doctorEmail %></td>
+    <td class="cert"><%= doctor.doctorSpecialization %></td>
+    <td class="sml"><%= doctor.doctorYearOfExp %></td>
+    <td class="cert"><%= doctor.doctorHospitalName %></td>
+    <td class="cert"><%= doctor.doctorHospitalPlace %></td>
+    <td class="cert"><%= doctor.doctorHospitalCity %></td>
+
+  </tr>
+  <% }) %>
+  </table>
+
+
+
+<div class="image">
+    <img src="images/angel.png" alt="">
+</div>
+
+
+</section>
+
+<%- include("partials/footer") -%>

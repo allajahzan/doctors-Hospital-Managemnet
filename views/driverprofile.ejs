@@ -1,0 +1,74 @@
+<%- include("partials/header") -%>
+
+    <section id="main-navbar">
+
+      <nav class="navbar navbar-expand-lg fixed-top">
+     <div class="container-fluid">
+       <a class="navbar-brand" href="#"><strong><img src="images/angel.png" alt="">Doctors</strong></a>
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarNav">
+         <ul class="navbar-nav ms-auto">
+           <li class="nav-item">
+             <a href="/ambulancelogin" class="btn btn-md btn-light btn-goback" type="button" name="button"><strong>Go Back</strong></a>
+           </li>
+         </ul>
+       </div>
+     </div>
+    </nav>
+    </section>
+
+
+
+
+    <section id="card-driver">
+            <h1><strong>Create Your Profile</strong> </h1>
+          <form class="form-edit-card" action="/createambprofile" method="post">
+
+            <div class="row row1">
+
+              <div class="col-sm-4">
+
+                <input type="text" name="uname" value="" placeholder="User Name" onkeydown="return /[a-zA-Z]/i.test(event.key)"  required> <br>
+                <input type="text" name="name" value="" placeholder="Name" onkeydown="return /[a-zA-Z]/i.test(event.key)" required> <br>
+                <input type="radio" id="male" name="gender" value="Male" required><label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="Female" required><label for="female">Female</label>
+                <input type="radio" id="others" name="gender" value="Others" required><label for="others">Others</label>
+                <input class="inputs" type="number" name="age" value="" placeholder="Age" required maxlength="2">
+                <input class="inputs"type="number" name="phoneno" value="" placeholder="Phone No" minlength="10" maxlength="10" required>
+
+
+
+              </div>
+              <div class="col-sm-4">
+
+
+
+                <input type="email" name="email" value="" placeholder="Email ID" required> <br>
+
+                <input type="number" name="dlno" value="" placeholder="DL No" required> <br>
+                <input type="text" name="vlno" value="" placeholder="Vehicle No" required> <br>
+                  <input type="text" name="hospital" value="" placeholder="Hospital" onkeydown="return /[a-zA-Z]/i.test(event.key)" required> <br>
+                <input type="text" name="drivingPlace" value="" placeholder="Driving Place" onkeydown="return /[a-zA-Z]/i.test(event.key)" required> <br>
+
+
+
+
+              </div>
+              <div class="col-sm-4">
+
+                  <input type="text" name="drivingCity" value="" placeholder="Driving City" onkeydown="return /[a-zA-Z]/i.test(event.key)" required> <br>
+                  <input type="text" name="dates" value="" placeholder="Dates" required> <br>
+                  <input type="text" name="days" value="" placeholder="Days" required> <br>
+                  <input type="text" name="time" value="" placeholder="Time" required> <br>
+                  <button class="btn btn-light btn-save-profile" type="submit" name="button">Create Profile</button> <br>
+
+              </div>
+            </div>
+          </form>
+    </section>
+
+
+
+  <%- include("partials/footer") -%>

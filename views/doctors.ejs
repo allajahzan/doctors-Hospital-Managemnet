@@ -1,0 +1,121 @@
+<%- include("partials/header") -%>
+
+
+<section id="main-navbar">
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+ <div class="container-fluid">
+   <a class="navbar-brand" href="#"><strong><img src="images/angel.png" alt="">Doctors</strong></a>
+   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarNav">
+     <ul class="navbar-nav ms-auto">
+       <li class="nav-item">
+
+         <a>
+    <a href="/mainpage" class="btn btn-md btn-light btn-goback" type="button" name="button"><strong>Go Back</strong></a>
+         </a>
+       </li>
+     </ul>
+   </div>
+ </div>
+</nav>
+</section>
+
+
+
+
+
+
+<section id="doctor-page">
+  <div class="row row1">
+    <div class="col-sm-4">
+         <a class="h1 btn btn-sm btn-light btn-prebook"><strong> Patients lists </strong> <i class="fa-solid fa-truck-medical"></i> </a>
+    </div>
+    <div class="col-sm-4">
+      <div class="row">
+        <div class="col-sm-6">
+           <a href="sendprescription" class="h1 btn btn-sm btn-light btn-pres"><strong> Prescription </strong> <i class="fa-solid fa-truck-medical"></i> </a>
+        </div>
+        <div class="col-sm-6">
+            <a class="h1 btn btn-sm btn-light btn-upload"><strong> Files </strong> <i class="fa-solid fa-truck-medical"></i> </a>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-sm-4">
+
+       <div class="row">
+         <div class="col-sm-6">
+           <a class="h1 btn btn-sm btn-light btn-profile"><strong> Profile </strong> <i class="fa-solid fa-truck-medical"></i> </a>
+         </div>
+         <div class="col-sm-6">
+            <a class="h1 btn btn-sm btn-light btn-account"><strong> Account </strong> <i class="fa-solid fa-truck-medical"></i> </a>
+         </div>
+
+       </div>
+    </div>
+  </div>
+
+  <div class="row row2">
+    <div class="col-sm-4">
+      <form class="form-booking-list" name="formdriver" action="patientslist" method="post">
+<p class="p">Give The Date</p>
+<input type="text" name="date" placeholder="yyyy-mm-dd" required>
+<input type="hidden" name="doctorUserName" id="doctorUserName">
+<button type="submit" class="btn btn-light btn-get-lists" name="button">Get Lists</button>
+</form>
+
+    </div>
+    <div class="col-sm-4">
+      <form class="form-update-prof" name="formdriver" action="deleteDoctorProfile" method="post">
+        <input  type="hidden" name="doctorUser" id="doctorUserpro" >
+        <button type="submit" class="btn btn-light btn-get-lists" name="button">Delete Profile</button>
+        <p>Wanna Add Profile?</p>
+        <a href="doctorprofileadd" type="button" class="btn btn-light btn-get-lists btn-update-doctor" name="button">Add/Update Profile</a>
+      </form>
+    </div>
+    <div class="col-sm-4">
+      <form class="form-delete-prof" action="logoutDoctor" method="post">
+          <h2><i class="fa-solid fa fa-user"></i> <span id="doctorUname"></span></h2>
+          <h2><i class="fa-solid  fa fa-envelope"></i><span id="doctorEmail"></span></h2>
+        <button type="submit" class="btn btn-light btn-get-lists" name="button">Logout</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="form-upload-prof">
+    <form name="formdriver" action="RemoveDocProfilePic" method="post">
+      <input  type="hidden" name="doctorUser" id="doctorUser" >
+      <button type="submit" class="btn btn-light btn-get-lists" name="button">Remove ProfilePic</button>
+    </form>
+      <p>Wanna Update Files?</p>
+      <a href="doctorfilesAdd" class="btn btn-light btn-get-lists btn-update-doctor" name="button">Add/Update files</a>
+      </div>
+  </div>
+
+  <div class="image">
+      <img src="images/angel.png" alt="">
+  </div>
+
+</section>
+
+
+
+<section id="approval">
+  <div class="approval">
+    <h1><strong>You cannot post your profile here, until the admin approves you!</strong> </h1>
+  </div>
+</section>
+
+<script>
+  if(!user){
+  setTimeout(function() {
+    window.location.href = "/doctors";
+  }, 4000);
+} // Redirect to the main page after 2 seconds (adjust as needed)
+</script>
+
+<%- include("partials/footer") -%>

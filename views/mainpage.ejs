@@ -1,0 +1,393 @@
+<%- include("partials/header") -%>
+
+<section id="start-navbar">
+  <nav class="navbar navbar-light fixed-top" id="navbar">
+<div class="container-fluid">
+<a class="navbar-brand" href="#"><img src="images/angel.png" alt=""><strong>Doctors</strong></a>
+<a id="toggle" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+  <span class="navbar-toggler-icon"></span>
+</a>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src="images/angel.png" alt=""><strong>Doctors</strong></h5>
+    <!-- <i id="close" data-bs-dismiss="offcanvas" aria-label="Close" class="fa-solid fa-xmark"></i> -->
+    <a id="close" type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></a>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+
+      <p class="p">What you can use:</p>
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="/doctors"><p><strong>Doctors Page</strong> </p></a>
+      </li>
+      <!-- <li>
+        <a class="nav-link active" href="/hospitals"><p><strong>Hospitals</strong> </p></a>
+      </li> -->
+      <li>
+        <a class="nav-link active" href="/ambulance"><p><strong>Ambulance</strong> </p></a>
+      </li>
+      <li>
+        <a class="nav-link active" href="/bookdetails"><p><strong>Book Details</strong> </p></a>
+      </li>
+      <li>
+        <a class="nav-link active"><p><strong>Blood Bank </strong> Soon </p></a>
+      </li>
+      <li>
+        <a class="nav-link active" href="#aboutus"><p><strong>About Us</strong> </p></a>
+      </li>
+      <li>
+        <a class="nav-link active" href="contact"><p><strong>Contact Us</strong> </p></a>
+      </li>
+      <li>
+          <a class="nav-link active" href="/admin"><p><strong>Admin</strong> </p></a>
+      </li>
+
+
+      <p class="p">User details:</p>
+
+      <div class="row row-account">
+        <p class="ac"><i class="fa-solid fa-user"></i><span id="uName"></span></p>
+        <p class="ac"><i class="fa-solid fa-envelope"></i><span id="uEmail"></span></p>
+      </div>
+      <br>
+      <li class="li">
+        <form class="" action="logoutUser" method="post">
+            <p><button class="btn-logout-user" type="submit"><strong>Logout</strong></button></p>
+        </form>
+      </li>
+
+      <!-- <li>
+          <a id="account" class="nav-link active" ><p><strong>Account</strong> </p></a>
+      </li> -->
+
+<!--
+      <li>
+        <form class="" action="logoutUser" method="post">
+            <button class="nav-link active" type="submit"><p><strong>Logout</strong> </p></button>
+        </form>
+      </li> -->
+
+    </ul>
+    <!-- <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form> -->
+
+
+
+  </div>
+</div>
+</div>
+<!-- <div class="container-fluid ms-auto">
+<a class="ms-auto3 ms" href="doctorslogin.html"><strong>Doctors</strong></a>
+<a class="ms-auto3 ms" href="#help"><strong>Book Details</strong></a>
+<a class="nav-link active" href="#help"><strong>Hospitals</strong></a>
+<a class="nav-link active" href="#contactus"><strong>Ambulance</strong></a>
+<a class="nav-link active" href="#contactus"><strong>Medicines</strong></a>
+<a class="nav-link active" href="#help"><strong>About Us</strong></a>
+<a class="nav-link active" href="#help"><strong>Account</strong></a>
+
+</div> -->
+</nav>
+
+</section>
+
+<section id="search">
+
+  <div class="row">
+
+    <h1><strong>Book An Appointment</strong> </h1>
+    <p>We are always ready to solve your problems.</p>
+
+            <form class="form-search" action="/doctorslist" method="post">
+            <img src="images/docUser.png" alt="">  <input onkeydown="return /[a-zA-Z]/i.test(event.key)" id="spec" class="category" type="text" name="specialization" placeholder="Specialization"  data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample" required>
+            <img src="images/location.png" alt="">   <input onkeydown="return /[a-zA-Z]/i.test(event.key)" class="place" type="text" name="city" placeholder="City" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample1" aria-expanded="false" aria-controls="collapseWidthExample" required>
+            <img src="images/date.png" alt="">   <input type="text" name="date" placeholder="yyyy-mm-dd" format="yyyy-mm-dd" required>
+              <button class="btn btn-md btn-light btn-search-doc" type="submit" name="button">Search Doctors</button>
+            </form>
+
+  </div>
+
+<!-- <div  class="" style="min-height: 120px;">
+  <div class="collapse collapse-horizontal" id="collapseWidthExample">
+    <div class="card card-body card1">
+      <ul>
+        Cardiology
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="" style="min-height: 120px;">
+  <div class="collapse collapse-horizontal card2" id="collapseWidthExample1">
+    <div class="card card-body" style="width: 300px;">
+      <p>Card</p>
+    </div>
+  </div>
+</div> -->
+
+
+
+<i id="click-ambulance" type="button" class="fa-solid fa-magnifying-glass fa-aro"><span>Ambulance</span></i>
+
+</section>
+
+
+
+
+
+<section id="search-amb">
+
+  <div class="row">
+
+    <h1><strong>Book An Ambulance</strong> </h1>
+    <p>We are always ready to solve your problems.</p>
+
+    <form class="form-ambulance" action="/ambulancelists" method="post">
+
+       <img src="images/location.png" alt=""> <input onkeydown="return /[a-zA-Z]/i.test(event.key)" type="text" name="city" value="" placeholder="City" required>
+       <img src="images/place.png" alt=""><input onkeydown="return /[a-zA-Z]/i.test(event.key)" type="text" name="place" value="" placeholder="Place (optional)" >
+       <img src="images/date.png" alt=""><input type="text" name="date" value="" placeholder="yyyy-mm-dd" required>
+        <!-- <i class="fa-solid fa-hospital"></i><input type="text" name="hospital" value="" placeholder="Hospital (optional)"> -->
+       <button class="btn btn-sm btn-light btn-search" type="submit" name="button">Search Drivers</button>
+
+    </form>
+
+  </div>
+
+
+<i id="click-doctor" type="button" class="fa-solid fa-magnifying-glass fa-aro"><span>Doctor</span></i>
+</section>
+
+
+
+<!--
+<section id="available">
+ <div class="cat" style="min-height: 120px;">
+   <div class="collapse collapse-horizontal" id="multiCollapseExample1">
+     <div class="card card-body categorys" style="width: 230px;">
+       <ul>
+         <li>Cardiologyst</li>
+         <li>Nephrologists</li>
+         <li>Urologists</li>
+
+
+       </ul>
+     </div>
+   </div>
+ </div>
+
+
+         <div class="pla" style="min-height: 120px;">
+           <div class="collapse collapse-horizontal" id="multiCollapseExample2">
+             <div class="card card-body places" style="width: 230px;">
+               <ul>
+                 <li>Banglore</li>
+                 <li>Calicut</li>
+                 <li>Kochi</li>
+               </ul>
+             </div>
+           </div>
+         </div>
+</section> -->
+
+
+<section id="online-doc">
+
+
+    <div class="row row-section">
+      <div class="col-sm-6">
+        <p>specialists</p>
+        <h1><strong>Know about the different specializations.</strong></h1>
+        <p class="para">Know about all the different kind of specializations, and also you can book appointment.</p>
+        <ul>
+          <p><i class="fa-solid fa-check"></i>   Cardiology</p>
+          <p><i class="fa-solid fa-check"></i>   Nephrology</p>
+          <p><i class="fa-solid fa-check"></i>   Neurology</p>
+          <p><i class="fa-solid fa-check"></i>   Urology</p>
+        </ul>
+        <a href="specialists.html" class="btn btn-success btn-md" type="button" name="button">See more</a>
+
+        <img class="sthetho" src="images/sthetho.png" alt="">
+      </div>
+      <div class="col-sm-6">
+        <div class="row">
+          <div class="col-sm-6 odd">
+            <div class="card specialist-card">
+              <div class="card-body">
+                    <img src="images/heart.png" alt="">
+
+                    <div class="cont">
+                      <h2><strong>Cardiology</strong> </h1>
+                        <p class="p">Cardiology is all about the heart.  A cardiologyst is the one who checks all the heart related problems.</p>
+                    </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 even">
+            <div class="card specialist-card">
+              <div class="card-body">
+                    <img src="images/kidney.png" alt="">
+
+                    <div class="cont">
+                      <h2><strong>Nephrology</strong> </h1>
+                        <p class="p">Nephrology is all about kidney. A nephrologyst is the one who checks all the kidney related problems.</p>
+                    </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 odd">
+            <div class="card specialist-card">
+              <div class="card-body">
+                    <img src="images/brain.png" alt="">
+
+                    <div class="cont">
+                      <h2><strong>Neurology</strong> </h1>
+                        <p class="p">Neurology is all about nerves. A neurologyst is the one who will check all the nerves related problems.</p>
+                    </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 even">
+            <div class="card specialist-card">
+              <div class="card-body" >
+                    <img src="images/urology.png" alt="">
+
+                    <div class="cont">
+                      <h2><strong>Urology</strong> </h1>
+                        <p class="p">Urology is all about Urinary parts. A Urologyst is the one who will check all the urinary related problems.</p>
+                    </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+
+</section>
+
+<section id="aboutus">
+ <div class="row">
+   <div class="col-sm-6">
+     <!-- <div class="row aboutus-row">
+       <div class="col-sm-6 odd">
+         <div class="card specialist-card">
+           <div class="card-body">
+                 <img src="images/sthetho1.png" alt="">
+
+                 <div class="cont">
+                   <h2><strong>Specialists</strong> </h1>
+
+                 </div>
+
+           </div>
+         </div>
+       </div>
+       <div class="col-sm-6  even">
+         <div class="card specialist-card">
+           <div class="card-body">
+                 <img src="images/hospital.png" alt="">
+
+                 <div class="cont">
+                   <h2><strong>Hospitals</strong> </h1>
+
+                 </div>
+
+           </div>
+         </div>
+       </div>
+       <div class="col-sm-6 odd">
+         <div class="card specialist-card">
+           <div class="card-body" >
+                 <img src="images/ambulance.png" alt="">
+
+                 <div class="cont">
+                   <h2><strong>Ambulances</strong> </h1>
+
+                 </div>
+
+           </div>
+         </div>
+       </div>
+       <div class="col-sm-6  even">
+         <div class="card specialist-card">
+           <div class="card-body">
+                 <img src="images/medicines.png" alt="">
+
+                 <div class="cont">
+                   <h2><strong>Medicines</strong> </h1>
+
+                 </div>
+
+           </div>
+         </div>
+       </div>
+     </div> -->
+     <img src="images/angel.png" alt="">
+   </div>
+   <div class="col-sm-6 aboutus-card">
+     <p>About Us</p>
+     <h1><strong>About our website.</strong></h1>
+     <p class="para">This platform is mainly to take appointment online. Also we are providing the followings,</p>
+     <ul>
+       <p><i class="fa-solid fa-check"></i>   Specialists</p>
+       <p><i class="fa-solid fa-check"></i>   Ambulance Service</p>
+       <p><i class="fa-solid fa-check"></i>   Online Prescription</p>
+       <p><i class="fa-solid fa-check"></i>   Blood Bank </p>
+
+     </ul>
+
+    <img class="aboutus-img" src="images/sthetho.png" alt="">
+
+   </div>
+
+ </div>
+
+</section>
+
+<section id="footer">
+
+  <div class="row">
+    <div class="col-sm-6">
+    <div class="container">
+       <p>Contact Us</p>
+      <h3><strong>Contact The Admin</strong></h3>
+            <p class="para">You can either send messege here or call to the number +917034661353</p>
+            <a class="a" href="/contact" class="btn btn-sm btn-light" type="button" name="button">Contact Us</a>
+
+    </div>
+    </div>
+
+    <div class="col-sm-6 Copyright">
+      <div class="row">
+        <!-- <div class="col-sm-6">
+          <p><i class="fa-solid fa-check"></i> <a href="#">Instagram</a>  </p>
+          <p><i class="fa-solid fa-check"></i> <a href="#">Thread</a>   </p>
+
+        </div>
+        <div class="col-sm-6">
+              <p><i class="fa-solid fa-check"></i>  <a href="#">Twitter X</a>  </p>
+              <p><i class="fa-solid fa-check"></i>  <a href="#">Facebook</a>   </p>
+        </div> -->
+
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="copy">
+  <p class="copy">© Copyright 2023 Doctors</p>
+</section>
+
+
+<%- include("partials/footer") -%>
